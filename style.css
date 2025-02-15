@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100%;
+}
+
+/* CSS Categories block  */
+
+.categories-block .category {
+  background-color: rgb(243, 243, 3);
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.categories-block .category:hover {
+  background-color: rgb(241, 198, 6);
+
+  .row {
+    width: 100%;
+  }
+}
+
+/*END CSS Categories block  */
+
+/* CSS Products block  */
+
+.products-block .outer-product {
+  padding: 0px 5px;
+  margin-bottom: 10px;
+}
+
+.products-block .product {
+  /* background-color: antiquewhite; */
+  /* border: 2px solid black; */
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.products-block .image {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.products-block img {
+  height: 100%;
+}
+
+.products-block .product .infor {
+  padding: 8px;
+}
+
+.products-block .product .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products-block .product .price {
+  color: red;
+}
+
+.products-block .discount {
+  position: absolute;
+  top: 3%;
+  right: 6%;
+  background-color: orange;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  aspect-ratio: 16/9;
+  text-align: center;
+  font-size: 15px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+/*END CSS Products block  */
