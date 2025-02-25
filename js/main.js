@@ -15,15 +15,15 @@ select.addEventListener("change", () => {
       showProducts(pathNOW);
       break;
     case "price-up":
-      pathNOW = fixedPATH + `?_sort=price`;
+      pathNOW = fixedPATH + `_sort=price`;
       showProducts(pathNOW);
       break;
     case "price-down":
-      pathNOW = fixedPATH + `?_sort=-price`;
+      pathNOW = fixedPATH + `_sort=price&_order=DESC`;
       showProducts(pathNOW);
       break;
     case "discount-down":
-      pathNOW = fixedPATH + `?_sort=-discountPercentage`;
+      pathNOW = fixedPATH + `_sort=discountPercentage&_order=DESC`;
       showProducts(pathNOW);
       break;
   }
@@ -43,4 +43,26 @@ searchButton.addEventListener("click", () => {
     console.log(pathNOW);
     showProducts(pathNOW);
   }
+});
+
+var pageNumber = document.querySelector(".pagination-block span");
+pageNumber.innerHTML = "1";
+
+var buttonPrevious = document.querySelector(".pagination-block .button-1");
+var buttonNext = document.querySelector(".pagination-block .button-2");
+
+buttonNext.addEventListener("click", () => {
+  let page = Number(pageNumber.innerHTML);
+  page++;
+  pageNumber.innerHTML = String(page);
+  let pathNOW = fixedPATH + `_page=${page}&_limit=12`;
+  showProducts(pathNOW);
+});
+
+buttonPrevious.addEventListener("click", () => {
+  let page = Number(pageNumber.innerHTML);
+  page--;
+  pageNumber.innerHTML = String(page);
+  let pathNOW = fixedPATH + `_page=${page}&_limit=12`;
+  showProducts(pathNOW);
 });
